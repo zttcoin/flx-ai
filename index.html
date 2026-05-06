@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>FLUXION Whitepaper</title>
+<title>FLUXION</title>
 
 <style>
 
@@ -15,7 +15,7 @@ box-sizing:border-box;
 }
 
 body{
-background:#050816;
+background:#020617;
 font-family:Arial;
 color:white;
 overflow-x:hidden;
@@ -36,99 +36,180 @@ z-index:-1;
 /* 顶部 */
 
 .nav{
-width:100%;
-padding:25px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:25px 8%;
 backdrop-filter:blur(20px);
 background:#08101fcc;
 border-bottom:1px solid #ffffff10;
 position:sticky;
 top:0;
+z-index:999;
 }
 
 .logo{
-font-size:38px;
+font-size:42px;
 font-weight:bold;
-color:#00e5ff;
-letter-spacing:2px;
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.back{
-padding:12px 26px;
-border-radius:14px;
-background:linear-gradient(90deg,#00e5ff,#00ff88);
-color:black;
-font-weight:bold;
+.menu{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.menu a{
 text-decoration:none;
+color:white;
+font-weight:bold;
 transition:0.3s;
 }
 
-.back:hover{
-transform:translateY(-3px);
-box-shadow:0 0 20px #00ffd577;
+.menu a:hover{
+color:#00ffd5;
 }
 
-/* 内容 */
+/* 语言按钮 */
 
-.container{
-width:90%;
-max-width:1100px;
-margin:70px auto;
-background:#0b1224cc;
-border:1px solid #ffffff12;
-border-radius:30px;
-padding:70px;
-backdrop-filter:blur(20px);
-}
-
-.title{
-font-size:52px;
+.lang-btn{
+padding:12px 22px;
+border:none;
+border-radius:14px;
+background:linear-gradient(90deg,#00ffd5,#00aaff);
 font-weight:bold;
-margin-bottom:20px;
+cursor:pointer;
+font-size:15px;
 }
 
-.sub{
-color:#8ca0c7;
-margin-bottom:60px;
-font-size:18px;
+/* HERO */
+
+.hero{
+min-height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
 }
 
-.section{
-margin-bottom:60px;
+.hero-box{
+max-width:1100px;
 }
 
-.section h2{
+.hero h1{
+font-size:82px;
+line-height:1.1;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.highlight{
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:26px;
+color:#cfd8e3;
+line-height:1.8;
+margin-bottom:50px;
+}
+
+/* 按钮 */
+
+.btns{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 42px;
+border-radius:18px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn-main{
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+color:black;
+}
+
+.btn-main:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px #00ffd577;
+}
+
+.btn-dark{
+background:#101826;
+border:1px solid #ffffff15;
+color:white;
+}
+
+.btn-dark:hover{
+transform:translateY(-5px);
+border-color:#00ffd5;
+}
+
+/* 服务 */
+
+.services{
+padding:100px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0d1628cc;
+border:1px solid #ffffff10;
+border-radius:24px;
+padding:40px;
+backdrop-filter:blur(20px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#00ffd5;
+box-shadow:0 0 30px #00ffd522;
+}
+
+.card h3{
 font-size:28px;
 margin-bottom:20px;
-color:#00e5ff;
 }
 
-.section p{
+.card p{
 font-size:18px;
-line-height:2;
-color:#d6d6d6;
+line-height:1.8;
+color:#cfd8e3;
 }
 
-/* PDF按钮 */
+/* 手机 */
 
-.pdf-btn{
-display:inline-block;
-margin-top:40px;
-padding:16px 34px;
-background:linear-gradient(90deg,#00e5ff,#00ff88);
-border-radius:14px;
-font-size:18px;
-font-weight:bold;
-color:black;
-text-decoration:none;
-transition:0.3s;
+@media(max-width:768px){
+
+.hero h1{
+font-size:52px;
 }
 
-.pdf-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 0 25px #00ffd588;
+.hero p{
+font-size:20px;
+}
+
+.menu{
+gap:20px;
+}
+
 }
 
 </style>
@@ -138,70 +219,162 @@ box-shadow:0 0 25px #00ffd588;
 
 <div class="bg"></div>
 
+<!-- 顶部 -->
+
 <div class="nav">
 
 <div class="logo">
 FLUXION
 </div>
 
-<a href="index.html" class="back">
-返回首页
+<div class="menu">
+
+<a href="#" id="nav-home">首页</a>
+
+<a href="#services" id="nav-services">服务</a>
+
+<a href="about.html" id="nav-about">关于</a>
+
+<a href="https://sfw.vc/w1313" target="_blank" id="nav-contact">联系</a>
+
+<button class="lang-btn" onclick="toggleLang()">
+EN / 中文
+</button>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1 id="title">
+去中心化 AI 算力基础设施网络
+</h1>
+
+<p id="desc">
+FLUXION 是新一代 Web3 AI 算力基础设施平台，
+聚焦 GPU 网络、去中心化计算资源与企业 AI 服务。
+</p>
+
+<div class="btns">
+
+<a href="https://sfw.vc/w1313"
+target="_blank"
+class="btn btn-main"
+id="btn-contact">
+立即联系
+</a>
+
+<a href="about.html"
+class="btn btn-dark"
+id="btn-whitepaper">
+白皮书
 </a>
 
 </div>
 
-<div class="container">
-
-<div class="title">
-FLUXION Whitepaper
 </div>
 
-<div class="sub">
-Web3 + GPU + AI Infrastructure
-</div>
+</section>
 
-<div class="section">
-<h2>项目简介</h2>
+<!-- 服务 -->
 
-<p>
-FLUXION 是一家面向全球的 AI 算力基础设施平台，
-核心业务涵盖 GPU 云计算、AI 推理、Web3 计算网络、
-分布式算力节点以及 AI Agent 服务生态。
+<section class="services" id="services">
+
+<div class="card">
+
+<h3 id="card1-title">
+GPU Compute
+</h3>
+
+<p id="card1-desc">
+提供高性能 GPU 云计算与 AI 推理服务。
 </p>
 
 </div>
 
-<div class="section">
+<div class="card">
 
-<h2>基础架构</h2>
+<h3 id="card2-title">
+Web3 Infrastructure
+</h3>
 
-<p>
-平台节点部署于低能源成本地区，
-通过高性能 GPU 集群为全球用户提供稳定 AI 计算服务，
-并通过 Web3 网络实现收益透明化与节点协同。
+<p id="card2-desc">
+构建去中心化 AI 算力协同网络。
 </p>
 
 </div>
 
-<div class="section">
+<div class="card">
 
-<h2>生态方向</h2>
+<h3 id="card3-title">
+AI Services
+</h3>
 
-<p>
-未来 FLUXION 将持续拓展：
-AI 搜索、AI Agent、
-GPU Marketplace、
-去中心化推理网络、
-AI 数据服务等生态模块。
+<p id="card3-desc">
+面向全球企业提供 AI Agent 与 AI 搜索服务。
 </p>
 
 </div>
 
-<a href="#" class="pdf-btn">
-PDF 白皮书（即将开放）
-</a>
+</section>
 
-</div>
+<script>
+
+let isCN=true;
+
+function toggleLang(){
+
+if(isCN){
+
+document.getElementById("title").innerHTML=
+"Decentralized AI Compute Infrastructure Network";
+
+document.getElementById("desc").innerHTML=
+"FLUXION is a next-generation Web3 AI compute infrastructure platform focused on GPU networks, decentralized compute resources and enterprise AI services.";
+
+document.getElementById("btn-contact").innerHTML=
+"Contact Now";
+
+document.getElementById("btn-whitepaper").innerHTML=
+"Whitepaper";
+
+document.getElementById("nav-home").innerHTML=
+"Home";
+
+document.getElementById("nav-services").innerHTML=
+"Services";
+
+document.getElementById("nav-about").innerHTML=
+"About";
+
+document.getElementById("nav-contact").innerHTML=
+"Contact";
+
+document.getElementById("card1-desc").innerHTML=
+"High performance GPU cloud computing and AI inference services.";
+
+document.getElementById("card2-desc").innerHTML=
+"Building decentralized AI compute collaboration networks.";
+
+document.getElementById("card3-desc").innerHTML=
+"AI Agent and AI search services for global enterprises.";
+
+isCN=false;
+
+}else{
+
+location.reload();
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
