@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLUXION Whitepaper</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#020817;
+color:white;
+overflow-x:hidden;
+}
+
+/* 背景 */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at left,#00ffd520,transparent 35%),
+radial-gradient(circle at right,#008cff15,transparent 35%),
+#020817;
+z-index:-1;
+}
+
+/* 顶部 */
+
+header{
+width:100%;
+padding:28px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+background:rgba(2,8,23,0.7);
+}
+
+.logo{
+font-size:42px;
+font-weight:bold;
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.back-btn{
+padding:14px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+color:black;
+}
+
+/* 主区域 */
+
+.container{
+padding:180px 10% 120px;
+max-width:1400px;
+margin:auto;
+}
+
+h1{
+font-size:78px;
+margin-bottom:25px;
+line-height:1.1;
+font-weight:900;
+}
+
+.sub{
+font-size:28px;
+color:#8ea3bd;
+margin-bottom:80px;
+}
+
+.block{
+margin-bottom:90px;
+padding:55px;
+border-radius:30px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.06);
+backdrop-filter:blur(15px);
+}
+
+.block h2{
+font-size:42px;
+margin-bottom:30px;
+color:#00ffd5;
+}
+
+.block p{
+font-size:22px;
+line-height:2;
+color:#c8d4e3;
+}
+
+/* PDF按钮 */
+
+.pdf-btn{
+display:inline-block;
+margin-top:30px;
+padding:18px 40px;
+border-radius:18px;
+font-size:20px;
+font-weight:bold;
+text-decoration:none;
+background:linear-gradient(90deg,#00ffd5,#00aaff);
+color:black;
+box-shadow:0 0 35px rgba(0,255,213,0.35);
+}
+
+/* 页脚 */
+
+footer{
+padding:50px;
+text-align:center;
+color:#7f8ea3;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:46px;
+}
+
+.sub{
+font-size:20px;
+}
+
+.block{
+padding:35px;
+}
+
+.block h2{
+font-size:32px;
+}
+
+.block p{
+font-size:18px;
+line-height:1.8;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header>
+
+<div class="logo">
+FLUXION
+</div>
+
+<a href="index.html" class="back-btn">
+返回首页
+</a>
+
+</header>
+
+<div class="container">
+
+<h1>
+FLUXION Whitepaper
+</h1>
+
+<div class="sub">
+Web3 + GPU + AI Infrastructure
+</div>
+
+<div class="block">
+
+<h2>
+项目简介
+</h2>
+
+<p>
+FLUXION 是一家面向全球的 AI 算力基础设施平台，
+核心业务涵盖 GPU 云计算、
+AI 推理、
+Web3 计算网络、
+分布式算力节点以及 AI Agent 服务生态。
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>
+基础架构
+</h2>
+
+<p>
+平台节点部署于低能源成本地区，
+通过高性能 GPU 集群为全球用户提供稳定 AI 计算服务，
+并通过 Web3 网络实现收益透明化与节点协同。
+</p>
+
+</div>
+
+<div class="block">
+
+<h2>
+生态方向
+</h2>
+
+<p>
+未来 FLUXION 将持续拓展：
+
+AI 搜索、
+AI Agent、
+GPU Marketplace、
+去中心化推理网络、
+AI 数据服务等生态模块。
+</p>
+
+<a href="#" class="pdf-btn">
+PDF 白皮书（即将开放）
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 FLUXION AI Infrastructure
+</footer>
+
+</body>
+</html>
