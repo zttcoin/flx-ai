@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial;
+font-family:Arial,Helvetica,sans-serif;
 background:#050816;
 color:#fff;
 overflow-x:hidden;
@@ -30,9 +30,9 @@ height:100%;
 top:0;
 left:0;
 background:
-radial-gradient(circle at 20% 20%,rgba(0,255,200,.15),transparent 25%),
+radial-gradient(circle at 20% 20%,rgba(0,255,170,.12),transparent 25%),
 radial-gradient(circle at 80% 30%,rgba(0,140,255,.15),transparent 25%),
-radial-gradient(circle at 50% 80%,rgba(0,255,255,.1),transparent 30%);
+radial-gradient(circle at 50% 80%,rgba(0,255,255,.08),transparent 30%);
 z-index:-1;
 animation:bgMove 12s infinite alternate;
 }
@@ -49,20 +49,21 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:20px 8%;
+padding:22px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(5,8,22,.8);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 z-index:999;
 border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .logo{
 font-size:30px;
-font-weight:bold;
-background:linear-gradient(90deg,#00ffcc,#00a2ff);
+font-weight:700;
+letter-spacing:2px;
+background:linear-gradient(90deg,#00ffb3,#00a2ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -75,23 +76,33 @@ align-items:center;
 nav a{
 color:#fff;
 text-decoration:none;
-margin-left:30px;
+margin-left:35px;
+font-size:15px;
 opacity:.8;
 transition:.3s;
 }
 
 nav a:hover{
-color:#00ffcc;
+color:#00ffb3;
 }
+
+/* 语言按钮 */
 
 .lang-btn{
 margin-left:30px;
-padding:10px 18px;
+padding:11px 18px;
 border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#00ffcc,#00a2ff);
+border-radius:12px;
+background:linear-gradient(90deg,#00ffb3,#00a2ff);
+color:#000;
 font-weight:bold;
 cursor:pointer;
+transition:.3s;
+}
+
+.lang-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,255,179,.25);
 }
 
 /* 首页 */
@@ -99,22 +110,22 @@ cursor:pointer;
 .hero{
 min-height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
 padding:0 8%;
 }
 
 .hero h1{
-font-size:72px;
-line-height:1.1;
-margin-bottom:25px;
-max-width:1100px;
+font-size:78px;
+line-height:1.05;
+max-width:1200px;
+margin-bottom:28px;
 }
 
 .hero span{
-background:linear-gradient(90deg,#00ffcc,#00a2ff);
+background:linear-gradient(90deg,#00ffb3,#00a2ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -123,9 +134,11 @@ background:linear-gradient(90deg,#00ffcc,#00a2ff);
 max-width:900px;
 font-size:22px;
 line-height:1.8;
-opacity:.8;
+opacity:.75;
 margin-bottom:45px;
 }
+
+/* 按钮 */
 
 .btns{
 display:flex;
@@ -134,33 +147,39 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-.btn{
-padding:18px 40px;
-border-radius:14px;
+.btn-main{
+padding:18px 42px;
+border-radius:16px;
+background:linear-gradient(90deg,#00ffb3,#00a2ff);
+color:#000;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.btn-main:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 40px rgba(0,255,179,.25);
+}
+
+.btn-dark{
+padding:18px 42px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(10px);
+color:#fff;
 font-size:18px;
 font-weight:bold;
 text-decoration:none;
 transition:.3s;
 }
 
-.btn-main{
-background:linear-gradient(90deg,#00ffcc,#00a2ff);
-color:#000;
-}
-
-.btn-main:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(0,255,200,.3);
-}
-
-.btn-dark{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-color:#fff;
-}
-
 .btn-dark:hover{
-background:rgba(255,255,255,.1);
+background:rgba(255,255,255,.08);
 }
 
 /* 模块 */
@@ -170,42 +189,42 @@ padding:120px 8%;
 }
 
 .section-title{
+font-size:52px;
 text-align:center;
-font-size:50px;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .section-desc{
 text-align:center;
 opacity:.7;
-margin-bottom:70px;
 font-size:18px;
+margin-bottom:70px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+gap:28px;
 }
 
 .card{
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.05);
-padding:40px;
-border-radius:22px;
-backdrop-filter:blur(10px);
+padding:42px;
+border-radius:24px;
+backdrop-filter:blur(12px);
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-border-color:#00ffcc;
-box-shadow:0 10px 30px rgba(0,255,200,.15);
+transform:translateY(-8px);
+border-color:#00ffb3;
+box-shadow:0 15px 40px rgba(0,255,179,.12);
 }
 
 .card h3{
 font-size:28px;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .card p{
@@ -213,18 +232,62 @@ opacity:.75;
 line-height:1.8;
 }
 
-/* about */
+/* 数据区 */
 
-.about-box{
-max-width:1200px;
-margin:auto;
-padding:60px;
-border-radius:30px;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:70px;
+}
+
+.stat{
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.05);
-line-height:2;
-font-size:17px;
-white-space:pre-line;
+padding:35px;
+border-radius:22px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:42px;
+margin-bottom:12px;
+background:linear-gradient(90deg,#00ffb3,#00a2ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.stat span{
+opacity:.65;
+}
+
+/* CTA */
+
+.cta{
+padding:120px 8%;
+text-align:center;
+}
+
+.cta-box{
+max-width:1200px;
+margin:auto;
+padding:80px;
+border-radius:40px;
+background:linear-gradient(135deg,rgba(0,255,179,.12),rgba(0,162,255,.08));
+border:1px solid rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+}
+
+.cta-box h2{
+font-size:56px;
+margin-bottom:24px;
+}
+
+.cta-box p{
+font-size:20px;
+opacity:.7;
+margin-bottom:40px;
 }
 
 /* footer */
@@ -232,7 +295,8 @@ white-space:pre-line;
 footer{
 padding:60px;
 text-align:center;
-opacity:.5;
+opacity:.45;
+font-size:14px;
 }
 
 /* 手机 */
@@ -240,7 +304,7 @@ opacity:.5;
 @media(max-width:768px){
 
 .hero h1{
-font-size:42px;
+font-size:46px;
 }
 
 .hero p{
@@ -255,8 +319,12 @@ display:none;
 font-size:34px;
 }
 
-.about-box{
-padding:30px;
+.cta-box{
+padding:45px 25px;
+}
+
+.cta-box h2{
+font-size:34px;
 }
 
 }
@@ -270,17 +338,19 @@ padding:30px;
 
 <header>
 
-<div class="logo">FLUXION</div>
+<div class="logo">
+FLUXION
+</div>
 
 <nav>
 
-<a href="#home" id="nav1">首页</a>
-<a href="#services" id="nav2">服务</a>
-<a href="#about" id="nav3">关于</a>
-<a href="#contact" id="nav4">联系</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="about.html">About</a>
+<a href="#contact">Contact</a>
 
-<button class="lang-btn" onclick="toggleLang()">
-中文 / EN
+<button class="lang-btn">
+EN / 中文
 </button>
 
 </nav>
@@ -291,24 +361,23 @@ padding:30px;
 
 <section class="hero" id="home">
 
-<h1 id="title">
+<h1>
 Decentralized <span>AI Compute</span><br>
 Infrastructure Network
 </h1>
 
-<p id="desc">
-FLUXION 是全球 Web3 AI 算力基础设施平台，
-专注 GPU 算力网络、AI计算服务与NFT通证生态。
+<p>
+FLUXION is a next-generation Web3 AI compute infrastructure platform focused on GPU networks, decentralized compute resources and enterprise AI services.
 </p>
 
 <div class="btns">
 
-<a class="btn btn-main" href="https://sfw.vc/w1313" target="_blank" id="btn1">
-立即咨询
+<a href="https://sfw.vc/w1313" target="_blank" class="btn-main">
+Contact Now
 </a>
 
-<a class="btn btn-dark" href="#about" id="btn2">
-查看白皮书
+<a href="about.html" class="btn-dark">
+Whitepaper
 </a>
 
 </div>
@@ -319,102 +388,90 @@ FLUXION 是全球 Web3 AI 算力基础设施平台，
 
 <section class="section" id="services">
 
-<h2 class="section-title" id="serviceTitle">
-核心服务
+<h2 class="section-title">
+Core Services
 </h2>
 
-<p class="section-desc" id="serviceDesc">
-GPU + AI + Web3 基础设施
+<p class="section-desc">
+AI Infrastructure · GPU Compute · Web3 Settlement
 </p>
 
 <div class="grid">
 
 <div class="card">
 <h3>GPU Compute</h3>
-<p id="card1">
-提供 A100 / H100 高性能 GPU 算力，
-支持 AI训练、渲染与推理业务。
+<p>
+High-performance A100 / H100 GPU clusters for AI training, rendering and large-scale inference.
 </p>
 </div>
 
 <div class="card">
 <h3>Mining Hosting</h3>
-<p id="card2">
-哈萨克斯坦低电费矿场，
-提供工业级托管服务。
+<p>
+Industrial-grade Kazakhstan mining farms with low-cost electricity and 24/7 operations.
 </p>
 </div>
 
 <div class="card">
 <h3>NFT Access</h3>
-<p id="card3">
-NFT作为平台唯一算力入口，
-支持收益分配与链上流通。
+<p>
+NFT-based compute access system supporting yield distribution and ecosystem participation.
 </p>
+</div>
+
+<div class="card">
+<h3>Web3 Settlement</h3>
+<p>
+ETH as ecosystem entry and RENDER as settlement token forming a complete compute economy.
+</p>
+</div>
+
+</div>
+
+<!-- 数据 -->
+
+<div class="stats">
+
+<div class="stat">
+<strong>12,842</strong>
+<span>Active Nodes</span>
+</div>
+
+<div class="stat">
+<strong>4.2M</strong>
+<span>GPU Hours</span>
+</div>
+
+<div class="stat">
+<strong>98.7%</strong>
+<span>Network Stability</span>
+</div>
+
+<div class="stat">
+<strong>$12M</strong>
+<span>Distributed Rewards</span>
 </div>
 
 </div>
 
 </section>
 
-<!-- 关于 -->
+<!-- CTA -->
 
-<section class="section" id="about">
+<section class="cta" id="contact">
 
-<h2 class="section-title" id="aboutTitle">
-FLUXION Whitepaper
+<div class="cta-box">
+
+<h2>
+Build The Future Of AI Compute
 </h2>
 
-<p class="section-desc">
-Web3 + GPU + AI Infrastructure
+<p>
+Join FLUXION and access decentralized GPU infrastructure designed for AI and enterprise workloads.
 </p>
 
-<div class="about-box" id="whitepaper">
-
-FLUXION 是一家以 Web3.0 为核心驱动的全球算力基础设施平台。
-
-核心算力基地部署于哈萨克斯坦，
-依托低电费优势与能源稳定性，
-为全球用户提供高性能 GPU 算力服务。
-
-————————————————
-
-核心业务：
-
-• GPU算力租赁  
-• AI训练与推理  
-• NFT算力系统  
-• Web3链上结算  
-• 矿场托管服务  
-
-————————————————
-
-FLUXION 构建的是：
-
-实体矿场 + AI算力 + NFT经济模型
-
-的新一代 AI Compute Infrastructure。
-
-</div>
-
-</section>
-
-<!-- 联系 -->
-
-<section class="section" id="contact">
-
-<h2 class="section-title" id="contactTitle">
-Contact Us
-</h2>
-
-<p class="section-desc" id="contactDesc">
-全球商务合作 / AI算力接入 / Web3生态
-</p>
-
-<div style="text-align:center;">
-
-<a class="btn btn-main" href="https://sfw.vc/w1313" target="_blank" id="contactBtn">
-联系官方客服
+<a href="https://sfw.vc/w1313" target="_blank" class="btn-main">
+Official Support
 </a>
 
 </div>
@@ -426,62 +483,6 @@ Contact Us
 © 2026 FLUXION AI COMPUTE NETWORK
 
 </footer>
-
-<script>
-
-let english=false;
-
-function toggleLang(){
-
-english=!english;
-
-if(english){
-
-document.getElementById("nav1").innerHTML="Home";
-document.getElementById("nav2").innerHTML="Services";
-document.getElementById("nav3").innerHTML="About";
-document.getElementById("nav4").innerHTML="Contact";
-
-document.getElementById("desc").innerHTML=
-"FLUXION is a global Web3 AI compute infrastructure platform focused on GPU networks and AI services.";
-
-document.getElementById("btn1").innerHTML="Contact";
-document.getElementById("btn2").innerHTML="Whitepaper";
-
-document.getElementById("serviceTitle").innerHTML="Core Services";
-document.getElementById("serviceDesc").innerHTML="GPU + AI + Web3 Infrastructure";
-
-document.getElementById("contactTitle").innerHTML="Contact Us";
-document.getElementById("contactDesc").innerHTML="Global Business Cooperation";
-
-document.getElementById("contactBtn").innerHTML="Official Support";
-
-}else{
-
-document.getElementById("nav1").innerHTML="首页";
-document.getElementById("nav2").innerHTML="服务";
-document.getElementById("nav3").innerHTML="关于";
-document.getElementById("nav4").innerHTML="联系";
-
-document.getElementById("desc").innerHTML=
-"FLUXION 是全球 Web3 AI 算力基础设施平台，专注 GPU 算力网络、AI计算服务与NFT通证生态。";
-
-document.getElementById("btn1").innerHTML="立即咨询";
-document.getElementById("btn2").innerHTML="查看白皮书";
-
-document.getElementById("serviceTitle").innerHTML="核心服务";
-document.getElementById("serviceDesc").innerHTML="GPU + AI + Web3 基础设施";
-
-document.getElementById("contactTitle").innerHTML="联系";
-document.getElementById("contactDesc").innerHTML="全球商务合作 / AI算力接入 / Web3生态";
-
-document.getElementById("contactBtn").innerHTML="联系官方客服";
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
